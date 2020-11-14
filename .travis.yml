@@ -1,8 +1,22 @@
-language: java
 services:
-- docker
+  - docker
 env:
   global:
-script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  docker build . --tag devops_eksamen --build-arg JAR_FILE=./devops_eksamen-0.0.1-SNAPSHOT.jar
-  docker tag  devops_eksamen  bragefridriksson/ devops_eksamen docker push bragefridriksson/devops_eksamen
+    - GCP_PROJECT_ID=devopsexam-295612
+    - IMAGE=gcr.io/devopsexam-295612/devops_exam
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+before_install:
+  - openssl aes-256-cbc -K $encrypted_98d237b7dbf4_key -iv $encrypted_98d237b7dbf4_iv -in google-key.json.enc -out google-key.json -d
+   # -in terraform.json.enc -out terraform.json -d
+  - curl https://sdk.cloud.google.com | bash > /dev/null
+  - source "$HOME/google-cloud-sdk/path.bash.inc"
+  - gcloud auth activate-service-account --key-file=terraform.json
+  - gcloud auth configure-docker
+  - gcloud config set project "${GCP_PROJECT_ID}"
+install: true
+script:
+  - |-
+    set -ex;
+    docker build -t "${IMAGE}:${TRAVIS_COMMIT}" . && \
+    docker push "${IMAGE}:${TRAVIS_COMMIT}" && \
+    set +x
