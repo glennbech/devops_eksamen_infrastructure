@@ -2,10 +2,9 @@ language: java
 services:
 - docker
 env:
-  global: 
+  global:
 script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   docker build . --tag devops_eksamen --build-arg JAR_FILE=./devops_eksamen-0.0.1-SNAPSHOT.jar
-  docker tag  devops_eksamen  bragefridriksson/ devops_eksamen docker push <ditt docker
-  hub username>/<et navn du finner på for din app>
+  docker tag  devops_eksamen  bragefridriksson/ devops_eksamen docker push bragefridriksson/devops_eksamen
 dd:
   secure: I3Kd3uip7cWedDGJLpkVhuoUVD0TsVvE16IBdamOfYDAlFCPaTIma4htgzJcJNra7BGy4Vyv+g0NEA7jTYzkQHVAhOMnTxXAhXq8WxZsozTzmtaj/zZx3GRbsxAKO17ybHgX2kMMIh9wqlvhJghdakUtZBUisvDxVZSAzzmevjXT/marDvMFV84YBxRTQOpa75ZceDicCOhb2nzZ5/G2BJoojvNKWnUOauUnp7BSmWxMt6odlrHzvfOH2ko6RBvH/l1Z2lF+Zxzw3cViXQKAZ2fjBwPafbTMUfYRVzSsMTU7q9NTYOmUxxPf0BE38VK7wUPcZ2yMtRgBvsTzTZfQObyqYOqrIdO1xefmfKfcvowd2m0aKHq9jI5P2xMQiT8KuTAsoZPhvGGWTcxvlu6Ak1mPZBBI0oYgSkzgTLKZTrafdiEb3vauKzfNX9he1tTBTymxvRh5Lq2H6RXTw57W4HScV9JooFnJyZ+v4uv+/P6L1JuIi3oEAEOvMZpfdbSSHi8UnMqtpnCZ3si0GluR2Z389GW/F+TUuh48VNczBuVX+Hsb6zWawdauGD4W3G9i60U4PfLNz8Q3QOUVMa0pOypze4zBCsfT9X3N3Qc2XKHb/68lUk66BK4aF2jnKsOUUh9I7vRL7/P4wnRU9Nk+Fk3FuDM6LlAyhJ+ClBD6Fr4=
