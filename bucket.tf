@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "static-site" {
-  project = "devopsexam-295612"
+  project = "examinfrastructure-295710"
   name = "devopsexaminfrastructurebucket"
   location = "US"
 }
