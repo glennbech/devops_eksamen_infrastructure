@@ -1,11 +1,11 @@
 resource "google_cloud_run_service" "default" {
-  name     = "devopsexaminfrastructure"
+  name     = "devopsexaminfrastructure01"
   location = "us-central1"
 
   template {
     spec {
       containers {
-        image = "us.gcr.io/default"
+        image = "us.gcr.io/examinfrastructure-295710/devops_eksamen_infrastructure/devopsexaminfrastructure"
       }
     }
   }
