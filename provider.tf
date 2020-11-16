@@ -1,14 +1,14 @@
 terraform {
   backend "gcs" {
-    bucket = "devopsexaminfrastructurebucket"
+    bucket = "devopsexaminfrastructurebucket01"
     prefix = "terraformstate"
     credentials = "terraform.json"
   }
 }
 
 provider "google" {
-  credentials = "${file("terraform.json")}"
-  project     = "devopsexam-295612"
+  credentials = "terraform.json"
+  project     = "examinfrastructure-295710"
   region      = "us-central1"
   zone        = "us-central1-c"
 }
