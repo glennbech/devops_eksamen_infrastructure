@@ -1,5 +1,5 @@
 resource "google_cloud_run_service" "default" {
-  name     = "devopsexaminfrastructure02"
+  name     = "devopsexaminfrastructure01"
   location = "us-central1"
   project = "examinfrastructure-295710"
 
