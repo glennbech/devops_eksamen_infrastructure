@@ -6,6 +6,7 @@ terraform {
   }
 }
 
+
 provider "google" {
   credentials = "terraform.json"
   project     = "examinfrastructure-295710"
