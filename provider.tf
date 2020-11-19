@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "devopsexaminfrastructurebuckettest"
+    bucket = "devopsexaminfrastructurebucket"
     prefix = "terraformstate"
     credentials = "terraform.json"
   }
