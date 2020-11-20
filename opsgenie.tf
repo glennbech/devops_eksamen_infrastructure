@@ -38,17 +38,17 @@ resource "opsgenie_team" "self-service" {
   delete_default_resources = true
 }
 
-//resource "opsgenie_schedule" "test" {
-//  name        = "genieschedule-test"
-//  description = "schedule test"
-//  timezone    = "Europe/Rome"
-//  enabled     = false
-//}
-//
-//resource "opsgenie_schedule" "test2" {
-//  name          = "genieschedule-test2"
-//  description   = "schedule test"
-//  timezone      = "Europe/Rome"
-//  enabled       = false
-//  owner_team_id = opsgenie_team.test.id
-//}
+resource "opsgenie_schedule" "test" {
+  name        = "genieschedule-test"
+  description = "schedule test"
+  timezone    = "Europe/Rome"
+  enabled     = false
+}
+
+resource "opsgenie_schedule" "test2" {
+  name          = "genieschedule-test2"
+  description   = "schedule test"
+  timezone      = "Europe/Rome"
+  enabled       = false
+  owner_team_id = opsgenie_team.test.id
+}
