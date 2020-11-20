@@ -1,6 +1,7 @@
 # Configure the Opsgenie Provider
 provider "opsgenie" {
   api_url = "api.eu.opsgenie.com" #default is api.opsgenie.com
+  version = "0.5.2"
 }
 
 resource "opsgenie_user" "first" {
