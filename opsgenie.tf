@@ -39,14 +39,14 @@ resource "opsgenie_team" "self-service" {
 }
 
 resource "opsgenie_schedule" "test" {
-  name        = "genieschedule-%s"
+  name        = "genieschedule-test"
   description = "schedule test"
   timezone    = "Europe/Rome"
   enabled     = false
 }
 
 resource "opsgenie_schedule" "test2" {
-  name          = "genieschedule-%s"
+  name          = "genieschedule-test2"
   description   = "schedule test"
   timezone      = "Europe/Rome"
   enabled       = false
