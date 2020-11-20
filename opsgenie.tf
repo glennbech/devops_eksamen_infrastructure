@@ -45,7 +45,7 @@ resource "opsgenie_schedule" "test" {
   enabled     = false
 }
 
-resource "opsgenie_schedule" "test" {
+resource "opsgenie_schedule" "test2" {
   name          = "genieschedule-%s"
   description   = "schedule test"
   timezone      = "Europe/Rome"
