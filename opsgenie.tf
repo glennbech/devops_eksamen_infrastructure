@@ -6,13 +6,13 @@ provider "opsgenie" {
 
 resource "opsgenie_user" "first" {
   username  = "user@domain.com"
-  full_name = "name "
+  full_name = "Arne "
   role      = "User"
 }
 
 resource "opsgenie_user" "second" {
   username  = "test@domain.com"
-  full_name = "name "
+  full_name = "Per "
   role      = "User"
 }
 
@@ -36,4 +36,19 @@ resource "opsgenie_team" "self-service" {
   description    = "Membership in this team is managed via OpsGenie web UI only"
   ignore_members = true
   delete_default_resources = true
+}
+
+resource "opsgenie_schedule" "test" {
+  name        = "genieschedule-%s"
+  description = "schedule test"
+  timezone    = "Europe/Rome"
+  enabled     = false
+}
+
+resource "opsgenie_schedule" "test" {
+  name          = "genieschedule-%s"
+  description   = "schedule test"
+  timezone      = "Europe/Rome"
+  enabled       = false
+  owner_team_id = opsgenie_team.test.id
 }
