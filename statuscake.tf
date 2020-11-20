@@ -1,6 +1,5 @@
 provider "statuscake" {
   username = "braggeliveno"
-  apikey = "STATUSCAKE_APIKEY"
 }
 
 resource "statuscake_test" "googlecloudruntest" {
